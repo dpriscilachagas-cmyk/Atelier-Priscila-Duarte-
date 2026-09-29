@@ -21,7 +21,6 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -65,7 +64,6 @@ header{
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
   text-decoration:none
 }
 
@@ -362,12 +360,7 @@ section{padding:95px 6%}
   overflow:hidden;
   display:flex;
   align-items:center;
-  justify-content:center;
-  color:#9A8881;
-  font-family:"Baskerville",serif;
-  font-style:italic;
-  text-align:center;
-  padding:20px
+  justify-content:center
 }
 
 .tile:first-child{grid-row:span 2}
@@ -600,10 +593,8 @@ footer{
   .gallery .tile:first-child{grid-row:span 1}
   .models{grid-template-columns:1fr 1fr}
   section{padding:72px 6%}
-
   .final-grid{grid-template-columns:1fr}
   .final-images>div{min-height:320px}
-
   .real-editorial{grid-template-columns:1fr}
   .real-editorial .real-feature,
   .real-editorial .real-wide,
@@ -612,7 +603,6 @@ footer{
     grid-row:auto;
     min-height:500px
   }
-
   .real-editorial figure{min-height:470px}
   .pure-story{grid-template-columns:1fr;gap:28px}
   .pure-story h2{font-size:36px}
@@ -633,18 +623,16 @@ footer{
 
 <header>
 <a class="brand" href="#inicio">
-<img class="main-logo" src="assets/atelier-priscila-duarte-logo.png" alt="Atelier Priscila Duarte">
+<img class="main-logo" src="atelier-priscila-duarte-logo.png" alt="Atelier Priscila Duarte">
 </a>
-
 <button class="menu" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
 </header>
 
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <aside class="drawer" id="drawer">
-
 <div class="drawer-top">
-<img class="drawer-logo" src="assets/atelier-priscila-duarte-logo.png" alt="Atelier Priscila Duarte">
+<img class="drawer-logo" src="atelier-priscila-duarte-logo.png" alt="Atelier Priscila Duarte">
 <button class="close" onclick="toggleMenu()">×</button>
 </div>
 
@@ -658,13 +646,11 @@ footer{
 <a href="#agendar" onclick="toggleMenu()">Agendar Atendimento</a>
 <a href="#contactos" onclick="toggleMenu()">Contactos · Como Chegar</a>
 </nav>
-
 </aside>
 
 <main>
 
 <section class="home" id="inicio">
-
 <div class="home-copy">
 <div class="kicker">Atelier Priscila Duarte · Loures</div>
 
@@ -682,10 +668,9 @@ a tradição e a delicadeza de um vestido verdadeiramente seu.
 </div>
 
 <div class="home-art">
-<img class="photo" src="assets/identidade-priscila-duarte.jpeg" alt="Identidade Atelier Priscila Duarte">
-<img class="watermark" src="assets/cp-couture-logo.png" alt="">
+<img class="photo" src="identidade-priscila-duarte.jpeg" alt="Identidade Atelier Priscila Duarte">
+<img class="watermark" src="cp-couture-logo.png" alt="">
 </div>
-
 </section>
 
 <section class="portals" id="colecoes">
@@ -699,7 +684,7 @@ a tradição e a delicadeza de um vestido verdadeiramente seu.
 <div class="portal-grid">
 
 <article class="portal" id="chaleur">
-<img class="wm" src="assets/cp-couture-logo.png" alt="">
+<img class="wm" src="cp-couture-logo.png" alt="">
 <div class="kicker">Coleção de Noivas</div>
 <h3>Chaleur <em>Fine</em></h3>
 <p>
@@ -710,7 +695,7 @@ Linhas depuradas, estruturas cuidadas e romantismo contemporâneo.
 </article>
 
 <article class="portal" id="pure">
-<img class="wm" src="assets/cp-couture-logo.png" alt="">
+<img class="wm" src="cp-couture-logo.png" alt="">
 <div class="kicker">Mães de Batizado</div>
 <h3>Coleção <em>Pure</em></h3>
 <p>
@@ -724,7 +709,6 @@ que podem ser adaptados em cor, tecido e detalhes.
 </section>
 
 <section class="editorial" id="atelier">
-
 <div class="story">
 
 <div>
@@ -737,9 +721,7 @@ Criamos vestidos sob medida, com processos artesanais e o cuidado de antigamente
 </p>
 
 <p>
-Cada criação nasce da essência de quem a irá vestir — nunca de um molde pronto.
-Do primeiro desenho às provas finais, cada escolha é feita com intenção,
-respeitando a individualidade de cada noiva.
+Cada noiva é única, e cada criação nasce da sua essência — nunca de um molde pronto.
 </p>
 
 <p>
@@ -748,8 +730,8 @@ respeitando a individualidade de cada noiva.
 </div>
 
 <div class="brand-card">
-<img class="photo" src="assets/identidade-priscila-duarte.jpeg" alt="Atelier Priscila Duarte">
-<img class="watermark" src="assets/cp-couture-logo.png" alt="">
+<img class="photo" src="identidade-priscila-duarte.jpeg" alt="Atelier Priscila Duarte">
+<img class="watermark" src="cp-couture-logo.png" alt="">
 </div>
 
 </div>
@@ -759,34 +741,32 @@ respeitando a individualidade de cada noiva.
 
 <div class="intro">
 <div class="kicker">Bastidores & Provas</div>
-
-<h2>
-Onde cada vestido começa a pertencer à <em>sua noiva.</em>
-</h2>
-
+<h2>Onde cada vestido começa a pertencer à <em>sua noiva.</em></h2>
 <p>
-Entre desenhos, tecidos, alfinetes e provas, cada vestido vai encontrando a sua forma.
-Um processo artesanal feito de proximidade, atenção e pequenos gestos.
+Entre tecidos, alfinetes, desenhos e provas, cada vestido vai encontrando a sua forma.
+É um processo feito de proximidade e atenção — observar o cair de um tecido,
+ajustar uma linha, aperfeiçoar uma proporção e cuidar dos detalhes que tornam
+cada criação verdadeiramente única.
 </p>
 </div>
 
 <div class="gallery warm-gallery">
 
 <div class="tile">
-<img src="assets/atelier-renda-mao.jpeg" alt="Aplicação artesanal de renda no atelier">
-<img class="wm" src="assets/cp-couture-logo.png" alt="">
+<img src="atelier-renda-mao.jpeg" alt="Aplicação artesanal de renda no atelier">
+<img class="wm" src="cp-couture-logo.png" alt="">
 </div>
 
 <div class="tile">
-<img src="assets/atelier-etiqueta.jpeg" alt="Etiqueta Atelier Priscila Duarte aplicada numa criação">
+<img src="atelier-etiqueta.jpeg" alt="Etiqueta Atelier Priscila Duarte">
 </div>
 
 <div class="tile">
-<img src="assets/bastidores-prova.jpg" alt="Prova de vestido no Atelier Priscila Duarte">
+<img src="bastidores-prova.jpg" alt="Prova de vestido no Atelier Priscila Duarte">
 </div>
 
 <div class="tile">
-<img src="assets/bastidores-ajustes.jpg" alt="Ajustes durante uma prova no atelier">
+<img src="bastidores-ajustes.jpg" alt="Ajustes durante uma prova no atelier">
 </div>
 
 </div>
@@ -799,9 +779,7 @@ Um processo artesanal feito de proximidade, atenção e pequenos gestos.
 <div class="quote">
 <div class="kicker">Momentos Finais</div>
 
-<h2>
-Quando todos os detalhes encontram o seu <em>lugar.</em>
-</h2>
+<h2>Quando todos os detalhes encontram o seu <em>lugar.</em></h2>
 
 <p>
 Depois do desenho, das escolhas, das horas de construção e das provas,
@@ -809,21 +787,21 @@ chegam os últimos gestos.
 </p>
 
 <p style="font-family:inherit;font-size:16px;font-style:normal">
-Um acabamento feito à mão. O cair de uma saia. A colocação de um botão.
-A última prova diante do espelho. É quando aquilo que começou como uma ideia
-está finalmente pronto para pertencer à sua noiva.
+Um ajuste delicado. Um acabamento feito à mão. O cair de uma saia.
+A colocação de um botão. A última prova diante do espelho.
+Está pronto para pertencer à sua noiva.
 </p>
 </div>
 
 <div class="final-images">
 
 <div>
-<img src="assets/atelier-renda-mao.jpeg" alt="Detalhe artesanal em renda">
+<img src="atelier-renda-mao.jpeg" alt="Detalhe artesanal em renda">
 </div>
 
 <div>
-<img src="assets/atelier-etiqueta.jpeg" alt="Assinatura Atelier Priscila Duarte na peça">
-<img class="wm" src="assets/cp-couture-logo.png" alt="">
+<img src="atelier-etiqueta.jpeg" alt="Assinatura Atelier Priscila Duarte">
+<img class="wm" src="cp-couture-logo.png" alt="">
 </div>
 
 </div>
@@ -834,46 +812,42 @@ está finalmente pronto para pertencer à sua noiva.
 
 <div class="intro">
 <div class="kicker">Noivas Reais</div>
-
-<h2>
-O vestido deixa o atelier. <em>A história continua.</em>
-</h2>
-
+<h2>O vestido deixa o atelier. <em>A história continua.</em></h2>
 <p>
 Cada criação encontra o seu verdadeiro significado quando é finalmente vivida.
-Mulheres reais, histórias únicas e vestidos criados para fazer parte
-de uma memória que permanece.
+Aqui ficam alguns desses momentos — mulheres reais, histórias únicas e vestidos
+criados para fazer parte de uma memória que permanece.
 </p>
 </div>
 
 <div class="real-editorial">
 
 <figure class="real-feature">
-<img src="assets/real-por-sol.jpeg" alt="Noiva real ao pôr do sol">
+<img src="real-por-sol.jpeg" alt="Noiva real ao pôr do sol">
 </figure>
 
 <figure>
-<img src="assets/real-noiva-mae.jpeg" alt="Noiva real num momento de família">
+<img src="real-noiva-mae.jpeg" alt="Noiva real num momento de família">
 </figure>
 
 <figure>
-<img src="assets/real-retrato-bouquet.jpeg" alt="Retrato de noiva real com bouquet">
+<img src="real-retrato-bouquet.jpeg" alt="Retrato de noiva real com bouquet">
 </figure>
 
 <figure class="real-wide">
-<img src="assets/real-beijo-cerimonia.jpeg" alt="Momento de cerimónia de uma noiva real">
+<img src="real-beijo-cerimonia.jpeg" alt="Momento de cerimónia">
 </figure>
 
 <figure>
-<img src="assets/real-casal-interior.jpeg" alt="Casal num momento espontâneo">
+<img src="real-casal-interior.jpeg" alt="Casal num momento espontâneo">
 </figure>
 
 <figure>
-<img src="assets/real-curto-igreja.jpeg" alt="Casal com vestido de noiva curto">
+<img src="real-curto-igreja.jpeg" alt="Casal com vestido de noiva curto">
 </figure>
 
 <figure class="real-bw">
-<img src="assets/real-noiva-riso-bw.jpeg" alt="Noiva real num momento espontâneo a preto e branco">
+<img src="real-noiva-riso-bw.jpeg" alt="Noiva real a preto e branco">
 </figure>
 
 </div>
@@ -883,11 +857,7 @@ de uma memória que permanece.
 
 <div class="intro">
 <div class="kicker">Chaleur Fine</div>
-
-<h2>
-Minimalismo sensível em vestidos <em>essenciais.</em>
-</h2>
-
+<h2>Minimalismo sensível em vestidos <em>essenciais.</em></h2>
 <p>
 Uma coleção pensada para valorizar a silhueta com precisão
 e revelar presença com delicadeza.
@@ -896,80 +866,21 @@ e revelar presença com delicadeza.
 
 <div class="models">
 
-<div class="model">
-<img class="model-photo" src="assets/noiva-audace.jpg" alt="Vestido Audace - Chaleur Fine">
-<h3>Audace</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-reverie.jpg" alt="Vestido Réverie - Chaleur Fine">
-<h3>Réverie</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-purete.jpg" alt="Vestido Pureté - Chaleur Fine">
-<h3>Pureté</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-etoile.jpg" alt="Vestido Étoile - Chaleur Fine">
-<h3>Étoile</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-soie.jpg" alt="Vestido Soie - Chaleur Fine">
-<h3>Soie</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-nacre.jpg" alt="Vestido Nacre - Chaleur Fine">
-<h3>Nacre</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-ivoire.jpg" alt="Vestido Ivoire - Chaleur Fine">
-<h3>Ivoire</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-ravissant.jpg" alt="Vestido Ravissant - Chaleur Fine">
-<h3>Ravissant</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-nuance.jpg" alt="Vestido Nuance - Chaleur Fine">
-<h3>Nuance</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-eclat.jpg" alt="Vestido Éclat - Chaleur Fine">
-<h3>Éclat</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-majeste.jpg" alt="Vestido Majesté - Chaleur Fine">
-<h3>Majesté</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-flanerie.jpg" alt="Vestido Flânerie - Chaleur Fine">
-<h3>Flânerie</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-silhouette.jpg" alt="Vestido Silhouette - Chaleur Fine">
-<h3>Silhouette</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-poesie.jpg" alt="Vestido Poésie - Chaleur Fine">
-<h3>Poésie</h3>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/noiva-solstice.jpg" alt="Vestido Solstice - Chaleur Fine">
-<h3>Solstice</h3>
-</div>
+<div class="model"><img class="model-photo" src="noiva-audace.jpg" alt="Vestido Audace"><h3>Audace</h3></div>
+<div class="model"><img class="model-photo" src="noiva-reverie.jpg" alt="Vestido Réverie"><h3>Réverie</h3></div>
+<div class="model"><img class="model-photo" src="noiva-purete.jpg" alt="Vestido Pureté"><h3>Pureté</h3></div>
+<div class="model"><img class="model-photo" src="noiva-etoile.jpg" alt="Vestido Étoile"><h3>Étoile</h3></div>
+<div class="model"><img class="model-photo" src="noiva-soie.jpg" alt="Vestido Soie"><h3>Soie</h3></div>
+<div class="model"><img class="model-photo" src="noiva-nacre.jpg" alt="Vestido Nacre"><h3>Nacre</h3></div>
+<div class="model"><img class="model-photo" src="noiva-ivoire.jpg" alt="Vestido Ivoire"><h3>Ivoire</h3></div>
+<div class="model"><img class="model-photo" src="noiva-ravissant.jpg" alt="Vestido Ravissant"><h3>Ravissant</h3></div>
+<div class="model"><img class="model-photo" src="noiva-nuance.jpg" alt="Vestido Nuance"><h3>Nuance</h3></div>
+<div class="model"><img class="model-photo" src="noiva-eclat.jpg" alt="Vestido Éclat"><h3>Éclat</h3></div>
+<div class="model"><img class="model-photo" src="noiva-majeste.jpg" alt="Vestido Majesté"><h3>Majesté</h3></div>
+<div class="model"><img class="model-photo" src="noiva-flanerie.jpg" alt="Vestido Flânerie"><h3>Flânerie</h3></div>
+<div class="model"><img class="model-photo" src="noiva-silhouette.jpg" alt="Vestido Silhouette"><h3>Silhouette</h3></div>
+<div class="model"><img class="model-photo" src="noiva-poesie.jpg" alt="Vestido Poésie"><h3>Poésie</h3></div>
+<div class="model"><img class="model-photo" src="noiva-solstice.jpg" alt="Vestido Solstice"><h3>Solstice</h3></div>
 
 </div>
 
@@ -983,16 +894,11 @@ e revelar presença com delicadeza.
 
 <div class="pure-story">
 
-<img src="assets/pure-mae-crianca.jpeg"
-alt="Vestido de cerimónia e vestido infantil em tons rosa antigo">
+<img src="pure-mae-crianca.jpeg" alt="Coleção Pure para mães de batizado">
 
 <div>
 <div class="kicker">Mães de Batizado</div>
-
-<h2>
-Um momento de família, vestido com <em>delicadeza.</em>
-</h2>
-
+<h2>Um momento de família, vestido com <em>delicadeza.</em></h2>
 <p>
 A Coleção Pure nasce para acompanhar celebrações íntimas e especiais.
 Peças pensadas para mães que procuram leveza, elegância e a possibilidade
@@ -1004,96 +910,25 @@ de personalizar cada detalhe.
 
 <div class="intro">
 <div class="kicker">Coleção Pure · Mães de Batizado</div>
-
-<h2>
-Elegância criada <em>sob medida.</em>
-</h2>
-
-<p>
-Modelos de cerimónia com possibilidade de personalização de cor,
-tecido e detalhes.
-</p>
+<h2>Elegância criada <em>sob medida.</em></h2>
+<p>Modelos de cerimónia com possibilidade de personalização de cor, tecido e detalhes.</p>
 </div>
 
 <div class="models">
 
-<div class="model">
-<img class="model-photo" src="assets/pure-madessa.jpg" alt="Modelo Madessa - Coleção Pure">
-<h3>Madessa</h3>
-<span>174 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-lumy.jpg" alt="Modelo Lumy - Coleção Pure">
-<h3>Lumy</h3>
-<span>164 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-tina.jpg" alt="Modelo Tina - Coleção Pure">
-<h3>Tina</h3>
-<span>179 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-eveni.jpg" alt="Modelo Eveni - Coleção Pure">
-<h3>Eveni</h3>
-<span>165 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-lis.jpg" alt="Modelo Lis - Coleção Pure">
-<h3>Lis</h3>
-<span>155 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-eudora.jpg" alt="Modelo Eudora - Coleção Pure">
-<h3>Eudora</h3>
-<span>170 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-grace.jpg" alt="Modelo Grace - Coleção Pure">
-<h3>Grace</h3>
-<span>159 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-july.jpg" alt="Modelo July - Coleção Pure">
-<h3>July</h3>
-<span>175 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-mey.jpg" alt="Modelo Mey - Coleção Pure">
-<h3>Mey</h3>
-<span>179 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-brisa.jpg" alt="Modelo Brisa - Coleção Pure">
-<h3>Brisa</h3>
-<span>169 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-jace.jpg" alt="Modelo Jace - Coleção Pure">
-<h3>Jace</h3>
-<span>189 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-serine.jpg" alt="Modelo Serine - Coleção Pure">
-<h3>Serine</h3>
-<span>155 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="assets/pure-anny.jpg" alt="Modelo Anny - Coleção Pure">
-<h3>Anny</h3>
-<span>165 €</span>
-</div>
+<div class="model"><img class="model-photo" src="pure-madessa.jpg" alt="Madessa"><h3>Madessa</h3><span>174 €</span></div>
+<div class="model"><img class="model-photo" src="pure-lumy.jpg" alt="Lumy"><h3>Lumy</h3><span>164 €</span></div>
+<div class="model"><img class="model-photo" src="pure-tina.jpg" alt="Tina"><h3>Tina</h3><span>179 €</span></div>
+<div class="model"><img class="model-photo" src="pure-eveni.jpg" alt="Eveni"><h3>Eveni</h3><span>165 €</span></div>
+<div class="model"><img class="model-photo" src="pure-lis.jpg" alt="Lis"><h3>Lis</h3><span>155 €</span></div>
+<div class="model"><img class="model-photo" src="pure-eudora.jpg" alt="Eudora"><h3>Eudora</h3><span>170 €</span></div>
+<div class="model"><img class="model-photo" src="pure-grace.jpg" alt="Grace"><h3>Grace</h3><span>159 €</span></div>
+<div class="model"><img class="model-photo" src="pure-july.jpg" alt="July"><h3>July</h3><span>175 €</span></div>
+<div class="model"><img class="model-photo" src="pure-mey.jpg" alt="Mey"><h3>Mey</h3><span>179 €</span></div>
+<div class="model"><img class="model-photo" src="pure-brisa.jpg" alt="Brisa"><h3>Brisa</h3><span>169 €</span></div>
+<div class="model"><img class="model-photo" src="pure-jace.jpg" alt="Jace"><h3>Jace</h3><span>189 €</span></div>
+<div class="model"><img class="model-photo" src="pure-serine.jpg" alt="Serine"><h3>Serine</h3><span>155 €</span></div>
+<div class="model"><img class="model-photo" src="pure-anny.jpg" alt="Anny"><h3>Anny</h3><span>165 €</span></div>
 
 </div>
 
@@ -1114,10 +949,7 @@ Falar sobre um modelo
 <section class="appointment" id="agendar">
 
 <div class="kicker">Atendimento personalizado</div>
-
-<h2>
-O seu vestido começa com uma <em>conversa.</em>
-</h2>
+<h2>O seu vestido começa com uma <em>conversa.</em></h2>
 
 <p>
 Conte-nos o que procura e fale diretamente com o atelier
@@ -1134,10 +966,7 @@ Agendar pelo WhatsApp
 <section class="location" id="contactos">
 
 <div class="kicker">Visite o Atelier</div>
-
-<h2>
-Atelier <em>Priscila Duarte</em>
-</h2>
+<h2>Atelier <em>Priscila Duarte</em></h2>
 
 <address>
 Rua Vasco da Gama 23 B<br>
@@ -1160,7 +989,6 @@ WhatsApp
 </a>
 
 </div>
-
 </section>
 
 </main>
