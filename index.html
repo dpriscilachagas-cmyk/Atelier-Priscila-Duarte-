@@ -1,467 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+/* =========================
+   NOIVAS REAIS
+========================= */
 
-<title>Atelier Priscila Duarte | Atelier de Noivas em Loures</title>
-
-<meta name="description" content="Atelier Priscila Duarte — Coleção Chaleur Fine, criação sob medida e Coleção Pure para mães de batizado em Loures.">
-
-<style>
-:root{
-  --pearl:#FBF9F5;
-  --pearl2:#F4EFEA;
-  --oldrose:#D8C1BD;
-  --oldrose2:#C9AAA5;
-  --champagne:#B79B6C;
-  --ink:#514844;
-  --taupe:#887A74;
-  --white:#fff;
+.real{
+  background:#fff;
 }
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
-
-body{
-  background:var(--pearl);
-  color:var(--ink);
-  font-family:"Helvetica Neue",Arial,sans-serif;
-  font-weight:300;
-  line-height:1.7;
-}
-
-body.lock{overflow:hidden}
-
-h1,h2,h3{
-  font-family:"Bodoni 72","Didot","Baskerville","Times New Roman",serif;
-  font-weight:400;
-  letter-spacing:-.02em;
-}
-
-em,.italic{
-  font-family:"Baskerville","Times New Roman",serif;
-  font-style:italic;
-  color:#A97C79;
-}
-
-a{color:inherit}
-
-/* CABEÇALHO */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  height:118px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 5%;
-  background:rgba(251,249,245,.97);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(81,72,68,.08);
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-}
-
-.brand img.main-logo{
-  width:245px;
-  height:104px;
-  object-fit:contain;
-  object-position:left center;
-}
-
-.menu{
-  width:54px;
-  height:54px;
-  border:1px solid rgba(81,72,68,.17);
-  border-radius:50%;
-  background:transparent;
-  font-size:21px;
-  color:var(--ink);
-  cursor:pointer;
-}
-
-/* MENU */
-
-.overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(65,55,51,.22);
-  z-index:80;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-}
-
-.overlay.open{
-  opacity:1;
-  pointer-events:auto;
-}
-
-.drawer{
-  position:fixed;
-  z-index:90;
-  right:0;
-  top:0;
-  width:min(90vw,420px);
-  height:100vh;
-  background:var(--pearl);
-  padding:28px 34px;
-  transform:translateX(100%);
-  transition:.35s;
-  box-shadow:-30px 0 70px rgba(70,55,50,.08);
-  overflow-y:auto;
-}
-
-.drawer.open{transform:none}
-
-.drawer-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding-bottom:24px;
-  border-bottom:1px solid rgba(81,72,68,.1);
-}
-
-.drawer-top img.drawer-logo{
-  width:210px;
-  height:auto;
-}
-
-.close{
-  border:0;
-  background:none;
-  font-size:31px;
-  color:var(--ink);
-  cursor:pointer;
-}
-
-.drawer nav{padding-top:22px}
-
-.drawer nav a{
-  display:block;
-  text-decoration:none;
-  padding:12px 0;
-  border-bottom:1px solid rgba(81,72,68,.07);
-  font-family:"Bodoni 72","Didot",serif;
-  font-size:21px;
-}
-
-.drawer nav a.major{
-  font-size:27px;
-  color:#A97C79;
-}
-
-/* HOME */
-
-.home{
-  min-height:calc(100vh - 118px);
-  display:grid;
-  grid-template-columns:1.02fr .98fr;
-  background:var(--pearl);
-}
-
-.home-copy{
-  padding:9vw 6vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.kicker{
-  text-transform:uppercase;
-  letter-spacing:.28em;
-  font-size:10px;
-  color:var(--champagne);
-  margin-bottom:20px;
-}
-
-.home h1{
-  font-size:clamp(55px,7vw,96px);
-  line-height:.93;
-  max-width:700px;
-}
-
-.home p{
-  max-width:520px;
-  margin:28px 0;
-  color:var(--taupe);
-  font-size:16px;
-}
-
-.home-art{
-  position:relative;
-  min-height:650px;
-  background:var(--oldrose);
-  overflow:hidden;
-}
-
-.home-art>img.photo{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.watermark{
-  position:absolute;
-  width:min(62%,430px);
-  opacity:.15;
-  mix-blend-mode:multiply;
-  pointer-events:none;
-}
-
-.home-art .watermark{
-  left:7%;
-  bottom:5%;
-}
-
-.actions{
-  display:flex;
-  gap:11px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:46px;
-  padding:0 23px;
-  border:1px solid var(--ink);
-  border-radius:999px;
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:10px;
-  background:var(--ink);
-  color:white;
-  transition:.2s;
-}
-
-.btn:hover{transform:translateY(-1px)}
-.btn.light{background:transparent;color:var(--ink)}
-.btn.rose{background:#A97C79;border-color:#A97C79}
-
-section{padding:95px 6%}
-
-.intro{
-  max-width:760px;
-  margin:0 auto 48px;
-  text-align:center;
-}
-
-.intro h2{
-  font-size:clamp(42px,6vw,70px);
-  line-height:1.02;
-  margin-bottom:17px;
-}
-
-.intro p{color:var(--taupe)}
-
-/* PORTAIS */
-
-.portals{background:var(--pearl2)}
-
-.portal-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.portal{
-  min-height:470px;
-  padding:52px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  position:relative;
-  overflow:hidden;
-  background:var(--white);
-  border:1px solid rgba(81,72,68,.07);
-}
-
-.portal:nth-child(2){background:#E8D9D5}
-
-.portal .wm{
-  position:absolute;
-  width:48%;
-  right:-4%;
-  top:4%;
-  opacity:.08;
-}
-
-.portal h3{
-  font-size:clamp(38px,5vw,60px);
-  line-height:1;
-}
-
-.portal p{
-  max-width:430px;
-  margin:17px 0 24px;
-  color:var(--taupe);
-}
-
-/* ESSÊNCIA */
-
-.editorial{background:var(--white)}
-
-.story{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:70px;
-  align-items:center;
-  max-width:1180px;
-  margin:auto;
-}
-
-.story h2{
-  font-size:clamp(43px,6vw,68px);
-  line-height:1.02;
-  margin:10px 0 23px;
-}
-
-.story p+p{margin-top:15px}
-
-.brand-card{
-  min-height:520px;
-  background:#E9DDDA;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.brand-card img.photo{
-  width:100%;
-  height:100%;
-  position:absolute;
-  inset:0;
-  object-fit:cover;
-}
-
-.brand-card .watermark{
-  right:5%;
-  bottom:4%;
-}
-
-/* BASTIDORES */
-
-.gallery-section{background:var(--pearl)}
-
-.gallery{
-  display:grid;
-  grid-template-columns:1.1fr .9fr .9fr;
-  grid-auto-rows:270px;
-  gap:14px;
-  max-width:1200px;
-  margin:auto;
-}
-
-.tile{
-  background:#E8DDDA;
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.tile:first-child{grid-row:span 2}
-
-.tile img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  inset:0;
-}
-
-.tile .wm{
-  position:absolute;
-  width:55%;
-  opacity:.1;
-}
-
-.warm-gallery img:not(.wm){
-  filter:saturate(.94) contrast(.98);
-}
-
-/* MOMENTOS */
-
-.final{background:#EADFDB}
-
-.final-grid{
-  max-width:1120px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.quote{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-}
-
-.quote h2{
-  font-size:clamp(43px,6vw,68px);
-  line-height:1.03;
-}
-
-.quote p{
-  font-family:"Baskerville",serif;
-  font-size:clamp(23px,3vw,34px);
-  line-height:1.4;
-  font-style:italic;
-  margin:27px 0;
-  color:#756661;
-}
-
-.final-images{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.final-images>div{
-  position:relative;
-  overflow:hidden;
-  min-height:440px;
-}
-
-.final-images img:not(.wm){
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.final-images .wm{
-  position:absolute;
-  width:90px;
-  height:90px;
-  object-fit:contain;
-  right:16px;
-  bottom:16px;
-  opacity:.18;
-}
-
-/* NOIVAS REAIS */
-
-.real{background:var(--white)}
 
 .real-editorial{
   max-width:1120px;
@@ -472,7 +15,6 @@ section{padding:95px 6%}
 }
 
 .real-editorial figure{
-  margin:0;
   overflow:hidden;
   min-height:460px;
   background:#eee5e0;
@@ -481,26 +23,31 @@ section{padding:95px 6%}
 .real-editorial img{
   width:100%;
   height:100%;
-  display:block;
   object-fit:cover;
 }
 
-.real-editorial .real-feature{
+.real-feature{
   grid-row:span 2;
-  min-height:934px;
+  min-height:934px!important;
 }
 
-.real-editorial .real-wide{
+.real-wide,
+.real-bw{
   grid-column:1/-1;
-  min-height:540px;
 }
 
-.real-editorial .real-bw{
-  grid-column:1/-1;
-  min-height:480px;
+.real-wide{
+  min-height:540px!important;
 }
 
-/* MODELOS */
+.real-bw{
+  min-height:480px!important;
+}
+
+
+/* =========================
+   MODELOS
+========================= */
 
 .models{
   display:grid;
@@ -511,10 +58,9 @@ section{padding:95px 6%}
 }
 
 .model{
-  background:white;
+  background:#fff;
   padding:14px 14px 22px;
   border:1px solid rgba(81,72,68,.06);
-  overflow:hidden;
 }
 
 .model-photo{
@@ -529,7 +75,7 @@ section{padding:95px 6%}
 
 #chaleur-modelos .model-photo{
   object-fit:contain;
-  object-position:center center;
+  object-position:center;
   background:#F7F2EE;
 }
 
@@ -550,31 +96,49 @@ section{padding:95px 6%}
   color:#A97C79;
 }
 
-/* LINK CATÁLOGO CHALEUR */
 
-.collection-link{
-  max-width:760px;
+/* =========================
+   CHALEUR FINE
+========================= */
+
+.collection-link,
+.distance-box{
+  max-width:780px;
   margin:0 auto 42px;
-  padding:30px 24px;
+  padding:30px 26px;
   text-align:center;
   border:1px solid rgba(183,155,108,.45);
   background:var(--pearl2);
 }
 
-.collection-link p{
+.collection-link p,
+.distance-box p{
   color:var(--taupe);
 }
 
-.collection-link strong{
-  font-family:"Bodoni 72","Didot","Baskerville",serif;
-  font-weight:400;
-  font-size:24px;
+.collection-link strong,
+.distance-box h3{
+  font:400 27px/1.2 "Bodoni 72","Didot","Baskerville",serif;
   color:var(--ink);
 }
 
-/* PURE */
+.distance-box{
+  margin-top:45px;
+  margin-bottom:0;
+}
 
-.ceremony{background:var(--pearl2)}
+.distance-box p+p{
+  margin-top:13px;
+}
+
+
+/* =========================
+   COLEÇÃO PURE
+========================= */
+
+.ceremony{
+  background:var(--pearl2);
+}
 
 .pure-story{
   max-width:1120px;
@@ -589,21 +153,108 @@ section{padding:95px 6%}
   width:100%;
   max-height:680px;
   object-fit:cover;
-  display:block;
 }
 
 .pure-story h2{
-  font:44px/1.08 "Bodoni 72","Didot","Baskerville","Times New Roman",serif;
-  font-weight:400;
+  font-size:44px;
+  line-height:1.08;
   margin:10px 0 20px;
 }
 
 .pure-story p{
   color:var(--taupe);
-  line-height:1.8;
 }
 
-/* FICHA CLIENTE */
+
+/* =========================
+   AVALIAÇÕES
+========================= */
+
+.reviews{
+  background:#fff;
+}
+
+.reviews-card{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  padding:52px 30px;
+  border:1px solid rgba(183,155,108,.4);
+  background:var(--pearl);
+}
+
+.reviews-card h3{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.reviews-card p{
+  color:var(--taupe);
+  margin-bottom:22px;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  background:#EADFDB;
+}
+
+.faq-wrap{
+  max-width:900px;
+  margin:auto;
+}
+
+.faq details{
+  border-top:1px solid rgba(81,72,68,.18);
+}
+
+.faq details:last-child{
+  border-bottom:1px solid rgba(81,72,68,.18);
+}
+
+.faq summary{
+  list-style:none;
+  cursor:pointer;
+  padding:24px 54px 24px 0;
+  position:relative;
+  font:400 clamp(22px,3vw,30px)/1.25
+  "Bodoni 72","Didot","Baskerville",serif;
+}
+
+.faq summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq summary:after{
+  content:"+";
+  position:absolute;
+  right:5px;
+  top:19px;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(81,72,68,.35);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font:300 23px Arial;
+}
+
+.faq details[open] summary:after{
+  content:"×";
+}
+
+.faq details p{
+  padding:0 55px 25px 0;
+  color:#6f625d;
+}
+
+
+/* =========================
+   FICHA DA CLIENTE
+========================= */
 
 .appointment{
   background:#D9C5C0;
@@ -636,7 +287,6 @@ section{padding:95px 6%}
 }
 
 .client-form input,
-.client-form select,
 .client-form textarea{
   width:100%;
   margin-top:7px;
@@ -645,35 +295,23 @@ section{padding:95px 6%}
   background:rgba(255,255,255,.72);
   color:var(--ink);
   font:inherit;
-  font-size:15px;
-  border-radius:0;
-  outline:none;
-}
-
-.client-form input:focus,
-.client-form select:focus,
-.client-form textarea:focus{
-  border-color:#A97C79;
 }
 
 .client-form textarea{
   min-height:120px;
-  resize:vertical;
 }
 
-.client-form .full{
+.full{
   grid-column:1/-1;
 }
 
-.client-form button{
-  cursor:pointer;
-}
 
-/* LOCALIZAÇÃO */
+/* =========================
+   CONTACTOS E REDES SOCIAIS
+========================= */
 
 .location{
   text-align:center;
-  background:var(--pearl);
 }
 
 .location h2{
@@ -685,22 +323,49 @@ section{padding:95px 6%}
   margin:22px 0;
 }
 
-.instagram-box{
+.social{
   max-width:700px;
   margin:42px auto 0;
   padding-top:34px;
   border-top:1px solid rgba(81,72,68,.12);
 }
 
-.instagram-box h3{
+.social h3{
   font-size:31px;
-  margin-bottom:8px;
 }
 
-.instagram-box p{
+.social p{
   color:var(--taupe);
-  margin-bottom:18px;
+  margin:8px 0 18px;
 }
+
+
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:70;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#514844;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
 
 footer{
   padding:32px;
@@ -711,44 +376,51 @@ footer{
   letter-spacing:.12em;
 }
 
-/* MOBILE */
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:850px){
 
   header{
-    height:108px;
-    padding:0 4%;
+    height:100px;
   }
 
-  .brand img.main-logo{
-    width:215px;
-    height:96px;
+  .brand img{
+    width:94px;
+    height:88px;
   }
 
   .home{
     grid-template-columns:1fr;
-    min-height:calc(100vh - 108px);
   }
 
   .home-copy{
     padding:70px 7% 55px;
   }
 
-  .home-art{min-height:480px}
+  .home-art{
+    min-height:430px;
+  }
 
   .portal-grid,
-  .story{
+  .story,
+  .final-grid,
+  .pure-story{
     grid-template-columns:1fr;
   }
 
-  .story{gap:35px}
+  .story{
+    gap:35px;
+  }
 
   .gallery{
     grid-template-columns:1fr 1fr;
-    grid-auto-rows:230px;
+    grid-auto-rows:260px;
   }
 
-  .gallery .tile:first-child{
+  .tile:first-child{
     grid-row:span 1;
   }
 
@@ -756,65 +428,36 @@ footer{
     grid-template-columns:1fr 1fr;
   }
 
-  section{padding:72px 6%}
-
-  .final-grid{
-    grid-template-columns:1fr;
-  }
-
-  .final-images>div{
-    min-height:320px;
-  }
-
   .real-editorial{
     grid-template-columns:1fr;
   }
 
-  .real-editorial .real-feature,
-  .real-editorial .real-wide,
-  .real-editorial .real-bw{
+  .real-feature,
+  .real-wide,
+  .real-bw{
     grid-column:auto;
     grid-row:auto;
-    min-height:500px;
+    min-height:500px!important;
   }
 
-  .real-editorial figure{
-    min-height:470px;
-  }
-
-  .pure-story{
-    grid-template-columns:1fr;
-    gap:28px;
-  }
-
-  .pure-story h2{
-    font-size:36px;
+  section{
+    padding:72px 6%;
   }
 }
 
+
+/* =========================
+   TELEMÓVEL
+========================= */
+
 @media(max-width:520px){
-
-  header{
-    height:112px;
-  }
-
-  .brand img.main-logo{
-    width:225px;
-    height:100px;
-  }
-
-  .menu{
-    width:50px;
-    height:50px;
-    flex:0 0 50px;
-  }
 
   .home h1{
     font-size:53px;
   }
 
   .home-art{
-    min-height:410px;
+    min-height:350px;
   }
 
   .actions .btn{
@@ -828,7 +471,7 @@ footer{
 
   .gallery{
     grid-template-columns:1fr;
-    grid-auto-rows:330px;
+    grid-auto-rows:390px;
   }
 
   .models{
@@ -839,102 +482,156 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .client-form .full{
+  .full{
     grid-column:auto;
   }
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
 <header>
+
 <a class="brand" href="#inicio">
-<img class="main-logo"
-src="atelier-priscila-duarte-logo.png"
-alt="Atelier Priscila Duarte">
+  <img
+  src="cp-couture-logo.png"
+  alt="Atelier Priscila Duarte">
 </a>
 
-<button class="menu"
+<button
+class="menu"
 aria-label="Abrir menu"
-onclick="toggleMenu()">☰</button>
+onclick="toggleMenu()">
+☰
+</button>
+
 </header>
 
-<div class="overlay"
-id="overlay"
-onclick="toggleMenu()"></div>
 
-<aside class="drawer" id="drawer">
+<div
+class="overlay"
+id="overlay"
+onclick="toggleMenu()">
+</div>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<aside
+class="drawer"
+id="drawer">
 
 <div class="drawer-top">
 
-<img class="drawer-logo"
+<img
+class="drawer-logo"
 src="atelier-priscila-duarte-logo.png"
 alt="Atelier Priscila Duarte">
 
-<button class="close"
-onclick="toggleMenu()">×</button>
+<button
+class="close"
+onclick="toggleMenu()">
+×
+</button>
 
 </div>
 
+
 <nav>
 
-<a class="major"
+<a
+class="major"
 href="#chaleur"
 onclick="toggleMenu()">
 Coleção de Noivas
 </a>
 
-<a class="major"
+<a
+class="major"
 href="#pure"
 onclick="toggleMenu()">
 Mães de Batizado
 </a>
 
-<a href="#atelier"
+<a
+href="#atelier"
 onclick="toggleMenu()">
 A Essência do Atelier
 </a>
 
-<a href="#bastidores"
+<a
+href="#bastidores"
 onclick="toggleMenu()">
 Bastidores & Provas
 </a>
 
-<a href="#momentos"
+<a
+href="#momentos"
 onclick="toggleMenu()">
 Momentos Finais
 </a>
 
-<a href="#noivas-reais"
+<a
+href="#noivas-reais"
 onclick="toggleMenu()">
 Noivas Reais
 </a>
 
-<a href="#agendar"
+<a
+href="#avaliacoes"
+onclick="toggleMenu()">
+Avaliações
+</a>
+
+<a
+href="#faq"
+onclick="toggleMenu()">
+Perguntas Frequentes
+</a>
+
+<a
+href="#agendar"
 onclick="toggleMenu()">
 Ficha da Cliente
 </a>
 
-<a href="#contactos"
+<a
+href="#contactos"
 onclick="toggleMenu()">
 Contactos · Como Chegar
 </a>
 
-<a href="https://www.instagram.com/prisciladuarte_atelier/"
+<a
+href="https://www.instagram.com/prisciladuarte_atelier/"
 target="_blank"
 rel="noopener">
 Instagram
 </a>
 
 </nav>
+
 </aside>
+
 
 <main>
 
-<!-- HOME -->
 
-<section class="home" id="inicio">
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section
+class="home"
+id="inicio">
 
 <div class="home-copy">
 
@@ -954,36 +651,43 @@ verdadeiramente seu.
 
 <div class="actions">
 
-<a class="btn rose"
+<a
+class="btn rose"
 href="#colecoes">
 Descobrir as coleções
 </a>
 
-<a class="btn light"
+<a
+class="btn light"
 href="#agendar">
 Agendar atendimento
 </a>
 
 </div>
+
 </div>
+
+
+<!-- LOGO PRINCIPAL -->
 
 <div class="home-art">
 
-<img class="photo"
-src="identidade-priscila-duarte.jpeg"
+<img
+src="atelier-priscila-duarte-logo.png"
 alt="Atelier Priscila Duarte">
 
-<img class="watermark"
-src="cp-couture-logo.png"
-alt="">
-
 </div>
+
 </section>
 
 
-<!-- COLEÇÕES -->
+<!-- =========================
+     COLEÇÕES
+========================= -->
 
-<section class="portals" id="colecoes">
+<section
+class="portals"
+id="colecoes">
 
 <div class="intro">
 
@@ -1001,11 +705,18 @@ Uma entrada simples para descobrir o universo que procura.
 
 </div>
 
+
 <div class="portal-grid">
 
-<article class="portal" id="chaleur">
 
-<img class="wm"
+<!-- CHALEUR -->
+
+<article
+class="portal"
+id="chaleur">
+
+<img
+class="wm"
 src="cp-couture-logo.png"
 alt="">
 
@@ -1022,16 +733,23 @@ Elegância, arquitetura e emoção em cada detalhe.
 Linhas depuradas, estruturas cuidadas e romantismo contemporâneo.
 </p>
 
-<a class="btn light"
+<a
+class="btn light"
 href="#chaleur-modelos">
 Conhecer a coleção →
 </a>
 
 </article>
 
-<article class="portal" id="pure">
 
-<img class="wm"
+<!-- PURE -->
+
+<article
+class="portal"
+id="pure">
+
+<img
+class="wm"
 src="cp-couture-logo.png"
 alt="">
 
@@ -1045,10 +763,12 @@ Coleção <em>Pure</em>
 
 <p>
 Delicadeza e elegância para um momento especial,
-com modelos que podem ser adaptados em cor, tecido e detalhes.
+com modelos que podem ser adaptados em cor,
+tecido e detalhes.
 </p>
 
-<a class="btn light"
+<a
+class="btn light"
 href="#pure-modelos">
 Conhecer a coleção →
 </a>
@@ -1056,12 +776,17 @@ Conhecer a coleção →
 </article>
 
 </div>
+
 </section>
 
 
-<!-- ESSÊNCIA -->
+<!-- =========================
+     ESSÊNCIA DO ATELIER
+========================= -->
 
-<section class="editorial" id="atelier">
+<section
+class="editorial"
+id="atelier">
 
 <div class="story">
 
@@ -1077,39 +802,51 @@ Cada noiva é única.
 </h2>
 
 <p>
-Criamos vestidos sob medida, com processos artesanais e o cuidado de antigamente.
+Criamos vestidos sob medida, com processos artesanais
+e o cuidado de antigamente.
 </p>
 
 <p>
-Cada noiva é única, e cada criação nasce da sua essência — nunca de um molde pronto.
+Cada noiva é única, e cada criação nasce da sua essência
+— nunca de um molde pronto.
 </p>
 
 <p>
 <em>
-Para mulheres que valorizam o feito à mão, a exclusividade e a tradição.
+Para mulheres que valorizam o feito à mão,
+a exclusividade e a tradição.
 </em>
 </p>
 
 </div>
 
+
 <div class="brand-card">
 
-<img class="photo"
+<img
+class="photo"
 src="identidade-priscila-duarte.jpeg"
-alt="Atelier Priscila Duarte">
+alt="Identidade Atelier Priscila Duarte">
 
-<img class="watermark"
+<img
+class="watermark"
 src="cp-couture-logo.png"
 alt="">
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- BASTIDORES -->
+<!-- =========================
+     BASTIDORES E PROVAS
+========================= -->
 
-<section class="gallery-section" id="bastidores">
+<section
+class="gallery-section"
+id="bastidores">
 
 <div class="intro">
 
@@ -1118,721 +855,957 @@ Bastidores & Provas
 </div>
 
 <h2>
-Onde cada vestido começa a pertencer à <em>sua noiva.</em>
+Onde cada vestido começa a pertencer à
+<em>sua noiva.</em>
 </h2>
 
 <p>
-Entre tecidos, alfinetes, desenhos e provas, cada vestido vai
-encontrando a sua forma. É um processo feito de proximidade e
-atenção — observar o cair de um tecido, ajustar uma linha,
-aperfeiçoar uma proporção e cuidar dos detalhes que tornam cada
-criação verdadeiramente única.
+Entre tecidos, alfinetes, desenhos e provas,
+cada vestido vai encontrando a sua forma.
+É um processo feito de proximidade e atenção —
+observar o cair de um tecido, ajustar uma linha,
+aperfeiçoar uma proporção e cuidar dos detalhes
+que tornam cada criação verdadeiramente única.
 </p>
 
 </div>
+
+
+<!-- AS 3 NOVAS FOTOGRAFIAS -->
 
 <div class="gallery warm-gallery">
 
 <div class="tile">
-<img src="atelier-renda-mao.jpeg"
-alt="Aplicação artesanal de renda no atelier">
-<img class="wm"
-src="cp-couture-logo.png"
-alt="">
+
+<img
+src="prova-noiva-01.jpeg"
+alt="Noiva durante uma prova de vestido">
+
 </div>
+
 
 <div class="tile">
-<img src="atelier-etiqueta.jpeg"
-alt="Etiqueta Atelier Priscila Duarte">
+
+<img
+src="prova-noiva-02.jpeg"
+alt="Prova de vestido no atelier">
+
 </div>
+
 
 <div class="tile">
-<img src="bastidores-prova.jpg"
-alt="Prova de vestido">
-</div>
 
-<div class="tile">
-<img src="bastidores-ajustes.jpg"
-alt="Ajustes durante uma prova">
-</div>
+<img
+src="prova-noiva-03.jpeg"
+alt="Noiva a experimentar o vestido no atelier">
 
 </div>
-</section>
+
+</div>
+
+</section>/* =========================
+   NOIVAS REAIS
+========================= */
+
+.real{
+  background:#fff;
+}
+
+.real-editorial{
+  max-width:1120px;
+  margin:38px auto 0;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:14px;
+}
+
+.real-editorial figure{
+  overflow:hidden;
+  min-height:460px;
+  background:#eee5e0;
+}
+
+.real-editorial img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.real-feature{
+  grid-row:span 2;
+  min-height:934px!important;
+}
+
+.real-wide,
+.real-bw{
+  grid-column:1/-1;
+}
+
+.real-wide{
+  min-height:540px!important;
+}
+
+.real-bw{
+  min-height:480px!important;
+}
 
 
-<!-- MOMENTOS FINAIS -->
+/* =========================
+   MODELOS
+========================= */
 
-<section class="final" id="momentos">
+.models{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  max-width:1200px;
+  margin:auto;
+}
 
-<div class="final-grid">
+.model{
+  background:#fff;
+  padding:14px 14px 22px;
+  border:1px solid rgba(81,72,68,.06);
+}
 
-<div class="quote">
+.model-photo{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+  margin-bottom:16px;
+  background:#eee5e0;
+}
 
-<div class="kicker">
+#chaleur-modelos .model-photo{
+  object-fit:contain;
+  object-position:center;
+  background:#F7F2EE;
+}
+
+.model h3{
+  font-size:25px;
+}
+
+.model-description{
+  margin-top:9px;
+  color:var(--taupe);
+  font-size:13px;
+  line-height:1.55;
+}
+
+.model span{
+  display:block;
+  margin-top:7px;
+  color:#A97C79;
+}
+
+
+/* =========================
+   CHALEUR FINE
+========================= */
+
+.collection-link,
+.distance-box{
+  max-width:780px;
+  margin:0 auto 42px;
+  padding:30px 26px;
+  text-align:center;
+  border:1px solid rgba(183,155,108,.45);
+  background:var(--pearl2);
+}
+
+.collection-link p,
+.distance-box p{
+  color:var(--taupe);
+}
+
+.collection-link strong,
+.distance-box h3{
+  font:400 27px/1.2 "Bodoni 72","Didot","Baskerville",serif;
+  color:var(--ink);
+}
+
+.distance-box{
+  margin-top:45px;
+  margin-bottom:0;
+}
+
+.distance-box p+p{
+  margin-top:13px;
+}
+
+
+/* =========================
+   COLEÇÃO PURE
+========================= */
+
+.ceremony{
+  background:var(--pearl2);
+}
+
+.pure-story{
+  max-width:1120px;
+  margin:0 auto 64px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:52px;
+  align-items:center;
+}
+
+.pure-story img{
+  width:100%;
+  max-height:680px;
+  object-fit:cover;
+}
+
+.pure-story h2{
+  font-size:44px;
+  line-height:1.08;
+  margin:10px 0 20px;
+}
+
+.pure-story p{
+  color:var(--taupe);
+}
+
+
+/* =========================
+   AVALIAÇÕES
+========================= */
+
+.reviews{
+  background:#fff;
+}
+
+.reviews-card{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  padding:52px 30px;
+  border:1px solid rgba(183,155,108,.4);
+  background:var(--pearl);
+}
+
+.reviews-card h3{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.reviews-card p{
+  color:var(--taupe);
+  margin-bottom:22px;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+  background:#EADFDB;
+}
+
+.faq-wrap{
+  max-width:900px;
+  margin:auto;
+}
+
+.faq details{
+  border-top:1px solid rgba(81,72,68,.18);
+}
+
+.faq details:last-child{
+  border-bottom:1px solid rgba(81,72,68,.18);
+}
+
+.faq summary{
+  list-style:none;
+  cursor:pointer;
+  padding:24px 54px 24px 0;
+  position:relative;
+  font:400 clamp(22px,3vw,30px)/1.25
+  "Bodoni 72","Didot","Baskerville",serif;
+}
+
+.faq summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq summary:after{
+  content:"+";
+  position:absolute;
+  right:5px;
+  top:19px;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(81,72,68,.35);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font:300 23px Arial;
+}
+
+.faq details[open] summary:after{
+  content:"×";
+}
+
+.faq details p{
+  padding:0 55px 25px 0;
+  color:#6f625d;
+}
+
+
+/* =========================
+   FICHA DA CLIENTE
+========================= */
+
+.appointment{
+  background:#D9C5C0;
+  text-align:center;
+}
+
+.appointment h2{
+  font-size:clamp(43px,6vw,70px);
+  line-height:1.03;
+}
+
+.appointment>p{
+  max-width:650px;
+  margin:20px auto 28px;
+}
+
+.client-form{
+  max-width:760px;
+  margin:35px auto 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  text-align:left;
+}
+
+.client-form label{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.client-form input,
+.client-form textarea{
+  width:100%;
+  margin-top:7px;
+  padding:15px;
+  border:1px solid rgba(81,72,68,.22);
+  background:rgba(255,255,255,.72);
+  color:var(--ink);
+  font:inherit;
+}
+
+.client-form textarea{
+  min-height:120px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+
+/* =========================
+   CONTACTOS E REDES SOCIAIS
+========================= */
+
+.location{
+  text-align:center;
+}
+
+.location h2{
+  font-size:clamp(42px,6vw,67px);
+}
+
+.location address{
+  font-style:normal;
+  margin:22px 0;
+}
+
+.social{
+  max-width:700px;
+  margin:42px auto 0;
+  padding-top:34px;
+  border-top:1px solid rgba(81,72,68,.12);
+}
+
+.social h3{
+  font-size:31px;
+}
+
+.social p{
+  color:var(--taupe);
+  margin:8px 0 18px;
+}
+
+
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:70;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#514844;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer{
+  padding:32px;
+  text-align:center;
+  background:#E5D9D4;
+  color:#70635E;
+  font-size:11px;
+  letter-spacing:.12em;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:850px){
+
+  header{
+    height:100px;
+  }
+
+  .brand img{
+    width:94px;
+    height:88px;
+  }
+
+  .home{
+    grid-template-columns:1fr;
+  }
+
+  .home-copy{
+    padding:70px 7% 55px;
+  }
+
+  .home-art{
+    min-height:430px;
+  }
+
+  .portal-grid,
+  .story,
+  .final-grid,
+  .pure-story{
+    grid-template-columns:1fr;
+  }
+
+  .story{
+    gap:35px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:260px;
+  }
+
+  .tile:first-child{
+    grid-row:span 1;
+  }
+
+  .models{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .real-editorial{
+    grid-template-columns:1fr;
+  }
+
+  .real-feature,
+  .real-wide,
+  .real-bw{
+    grid-column:auto;
+    grid-row:auto;
+    min-height:500px!important;
+  }
+
+  section{
+    padding:72px 6%;
+  }
+}
+
+
+/* =========================
+   TELEMÓVEL
+========================= */
+
+@media(max-width:520px){
+
+  .home h1{
+    font-size:53px;
+  }
+
+  .home-art{
+    min-height:350px;
+  }
+
+  .actions .btn{
+    width:100%;
+  }
+
+  .portal{
+    min-height:390px;
+    padding:34px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+    grid-auto-rows:390px;
+  }
+
+  .models{
+    grid-template-columns:1fr;
+  }
+
+  .client-form{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+<a class="brand" href="#inicio">
+  <img
+  src="cp-couture-logo.png"
+  alt="Atelier Priscila Duarte">
+</a>
+
+<button
+class="menu"
+aria-label="Abrir menu"
+onclick="toggleMenu()">
+☰
+</button>
+
+</header>
+
+
+<div
+class="overlay"
+id="overlay"
+onclick="toggleMenu()">
+</div>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<aside
+class="drawer"
+id="drawer">
+
+<div class="drawer-top">
+
+<img
+class="drawer-logo"
+src="atelier-priscila-duarte-logo.png"
+alt="Atelier Priscila Duarte">
+
+<button
+class="close"
+onclick="toggleMenu()">
+×
+</button>
+
+</div>
+
+
+<nav>
+
+<a
+class="major"
+href="#chaleur"
+onclick="toggleMenu()">
+Coleção de Noivas
+</a>
+
+<a
+class="major"
+href="#pure"
+onclick="toggleMenu()">
+Mães de Batizado
+</a>
+
+<a
+href="#atelier"
+onclick="toggleMenu()">
+A Essência do Atelier
+</a>
+
+<a
+href="#bastidores"
+onclick="toggleMenu()">
+Bastidores & Provas
+</a>
+
+<a
+href="#momentos"
+onclick="toggleMenu()">
 Momentos Finais
-</div>
+</a>
 
-<h2>
-Quando todos os detalhes encontram o seu <em>lugar.</em>
-</h2>
-
-<p>
-Depois do desenho, das escolhas, das horas de construção
-e das provas, chegam os últimos gestos.
-</p>
-
-<p style="font-family:inherit;font-size:16px;font-style:normal">
-Um ajuste delicado. Um acabamento feito à mão.
-O cair de uma saia. A colocação de um botão.
-A última prova diante do espelho.
-Está pronto para pertencer à sua noiva.
-</p>
-
-</div>
-
-<div class="final-images">
-
-<div>
-<img src="atelier-renda-mao.jpeg"
-alt="Detalhe artesanal em renda">
-</div>
-
-<div>
-
-<img src="atelier-etiqueta.jpeg"
-alt="Assinatura Atelier Priscila Duarte">
-
-<img class="wm"
-src="cp-couture-logo.png"
-alt="">
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- NOIVAS REAIS -->
-
-<section class="real" id="noivas-reais">
-
-<div class="intro">
-
-<div class="kicker">
+<a
+href="#noivas-reais"
+onclick="toggleMenu()">
 Noivas Reais
-</div>
+</a>
 
-<h2>
-O vestido deixa o atelier.
-<em>A história continua.</em>
-</h2>
+<a
+href="#avaliacoes"
+onclick="toggleMenu()">
+Avaliações
+</a>
 
-<p>
-Cada criação encontra o seu verdadeiro significado quando é
-finalmente vivida. Aqui ficam alguns desses momentos — mulheres
-reais, histórias únicas e vestidos criados para fazer parte de
-uma memória que permanece.
-</p>
+<a
+href="#faq"
+onclick="toggleMenu()">
+Perguntas Frequentes
+</a>
 
-</div>
+<a
+href="#agendar"
+onclick="toggleMenu()">
+Ficha da Cliente
+</a>
 
-<div class="real-editorial">
+<a
+href="#contactos"
+onclick="toggleMenu()">
+Contactos · Como Chegar
+</a>
 
-<figure class="real-feature">
-<img src="real-por-sol.jpeg"
-alt="Noiva real ao pôr do sol">
-</figure>
-
-<figure>
-<img src="real-noiva-mae.jpeg"
-alt="Noiva real num momento de família">
-</figure>
-
-<figure>
-<img src="real-retrato-bouquet.jpeg"
-alt="Retrato de noiva com bouquet">
-</figure>
-
-<figure class="real-wide">
-<img src="real-beijo-cerimonia.jpeg"
-alt="Momento de cerimónia">
-</figure>
-
-<figure>
-<img src="real-casal-interior.jpeg"
-alt="Casal">
-</figure>
-
-<figure>
-<img src="real-curto-igreja.jpeg"
-alt="Vestido de noiva curto">
-</figure>
-
-<figure class="real-bw">
-<img src="real-noiva-riso-bw.jpeg"
-alt="Noiva real">
-</figure>
-
-</div>
-</section>
-
-
-<!-- CHALEUR FINE -->
-
-<section id="chaleur-modelos">
-
-<div class="intro">
-
-<div class="kicker">
-Chaleur Fine
-</div>
-
-<h2>
-Minimalismo sensível em vestidos <em>essenciais.</em>
-</h2>
-
-<p>
-Uma coleção pensada para valorizar a silhueta com precisão
-e revelar presença com delicadeza.
-</p>
-
-</div>
-
-
-<!-- LINK COLEÇÃO COMPLETA -->
-
-<div class="collection-link">
-
-<p>
-<strong>
-Quer conhecer todos os detalhes da Chaleur Fine?
-</strong>
-<br>
-Veja a coleção completa, com todos os modelos e detalhes.
-</p>
-
-<div class="actions"
-style="justify-content:center;margin-top:20px">
-
-<a class="btn rose"
-href="https://atelierprisciladuarte.my.canva.site/cole-o-chaleur-fine-2026"
+<a
+href="https://www.instagram.com/prisciladuarte_atelier/"
 target="_blank"
 rel="noopener">
-Ver coleção completa →
+Instagram
 </a>
 
+</nav>
+
+</aside>
+
+
+<main>
+
+
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section
+class="home"
+id="inicio">
+
+<div class="home-copy">
+
+<div class="kicker">
+Atelier Priscila Duarte · Loures
 </div>
-</div>
 
+<h1>
+O início de um <em>sonho.</em>
+</h1>
 
-<!-- VESTIDOS -->
-
-<div class="models">
-
-<div class="model">
-<img class="model-photo" src="noiva-audace.jpg" alt="Vestido Audace">
-<h3>Audace</h3>
-<p class="model-description">
-Silhueta evasé fluida com fenda frontal, decote em V traspassado
-e costas abertas. Delicado, gracioso e moderno.
+<p>
+Criações feitas à mão, pensadas para mulheres que valorizam
+a exclusividade, a tradição e a delicadeza de um vestido
+verdadeiramente seu.
 </p>
-</div>
 
-<div class="model">
-<img class="model-photo" src="noiva-reverie.jpg" alt="Vestido Réverie">
-<h3>Réverie</h3>
-<p class="model-description">
-Etéreo e romântico, com flores bordadas que envolvem o corpo
-com suavidade e uma feminilidade serena.
-</p>
-</div>
+<div class="actions">
 
-<div class="model">
-<img class="model-photo" src="noiva-purete.jpg" alt="Vestido Pureté">
-<h3>Pureté</h3>
-<p class="model-description">
-Decote quadrado, cintura marcada e saia ampla.
-Linhas puras e estrutura precisa num minimalismo refinado.
-</p>
-</div>
+<a
+class="btn rose"
+href="#colecoes">
+Descobrir as coleções
+</a>
 
-<div class="model">
-<img class="model-photo" src="noiva-etoile.jpg" alt="Vestido Étoile">
-<h3>Étoile</h3>
-<p class="model-description">
-Decote em V delicadamente drapeado e saia ampla em camadas
-de tule leve, criada para movimento e suavidade.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-soie.jpg" alt="Vestido Soie">
-<h3>Soie</h3>
-<p class="model-description">
-Mangas de transparência subtil, desenho floral e silhueta limpa
-para uma presença elegante, calma e atemporal.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-nacre.jpg" alt="Vestido Nacre">
-<h3>Nacre</h3>
-<p class="model-description">
-Suavidade, luz e feminilidade atemporal, inspiradas na textura
-suave e no brilho discreto da seda.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-ivoire.jpg" alt="Vestido Ivoire">
-<h3>Ivoire</h3>
-<p class="model-description">
-Sofisticação minimalista com decote ombro a ombro e modelagem
-sereia que desenha a cintura e o quadril.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-ravissant.jpg" alt="Vestido Ravissant">
-<h3>Ravissant</h3>
-<p class="model-description">
-Pureza e detalhe quase impercetível, numa composição em que
-o encanto nasce da harmonia das formas simples.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-nuance.jpg" alt="Vestido Nuance">
-<h3>Nuance</h3>
-<p class="model-description">
-Renda floral translúcida que envolve o corpo com leveza,
-unindo romantismo contemporâneo e elegância suave.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-eclat.jpg" alt="Vestido Éclat">
-<h3>Éclat</h3>
-<p class="model-description">
-Delicadeza e presença em equilíbrio, com rendas subtis
-e linhas que valorizam a feminilidade de forma natural.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-majeste.jpg" alt="Vestido Majesté">
-<h3>Majesté</h3>
-<p class="model-description">
-Clássico, estruturado e marcante, com arquitetura cuidada
-e a imponência silenciosa das proporções clássicas.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-flanerie.jpg" alt="Vestido Flânerie">
-<h3>Flânerie</h3>
-<p class="model-description">
-Bordados delicados parecem florescer sobre o tule,
-entre o clássico e o contemporâneo, com leveza e feminilidade.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-silhouette.jpg" alt="Vestido Silhouette">
-<h3>Silhouette</h3>
-<p class="model-description">
-Estrutura limpa e movimento etéreo da saia criam uma presença
-sofisticada entre o clássico e o contemporâneo.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-poesie.jpg" alt="Vestido Poésie">
-<h3>Poésie</h3>
-<p class="model-description">
-Silhueta clássica e contemporânea, com leveza atemporal,
-doçura e proporções delicadamente construídas.
-</p>
-</div>
-
-<div class="model">
-<img class="model-photo" src="noiva-solstice.jpg" alt="Vestido Solstice">
-<h3>Solstice</h3>
-<p class="model-description">
-Minimalismo romântico e escultural, com decote que valoriza
-os ombros e silhueta fluida, leve e feminina.
-</p>
-</div>
-
-</div>
-
-<div class="actions"
-style="justify-content:center;margin-top:35px">
-
-<a class="btn rose"
+<a
+class="btn light"
 href="#agendar">
-Gostei de um modelo
+Agendar atendimento
 </a>
+
+</div>
+
+</div>
+
+
+<!-- LOGO PRINCIPAL -->
+
+<div class="home-art">
+
+<img
+src="atelier-priscila-duarte-logo.png"
+alt="Atelier Priscila Duarte">
 
 </div>
 
 </section>
+
+
+<!-- =========================
+     COLEÇÕES
+========================= -->
+
+<section
+class="portals"
+id="colecoes">
+
+<div class="intro">
+
+<div class="kicker">
+Escolha o seu caminho
+</div>
+
+<h2>
+Duas coleções, uma mesma <em>essência.</em>
+</h2>
+
+<p>
+Uma entrada simples para descobrir o universo que procura.
+</p>
+
+</div>
+
+
+<div class="portal-grid">
+
+
+<!-- CHALEUR -->
+
+<article
+class="portal"
+id="chaleur">
+
+<img
+class="wm"
+src="cp-couture-logo.png"
+alt="">
+
+<div class="kicker">
+Coleção de Noivas
+</div>
+
+<h3>
+Chaleur <em>Fine</em>
+</h3>
+
+<p>
+Elegância, arquitetura e emoção em cada detalhe.
+Linhas depuradas, estruturas cuidadas e romantismo contemporâneo.
+</p>
+
+<a
+class="btn light"
+href="#chaleur-modelos">
+Conhecer a coleção →
+</a>
+
+</article>
 
 
 <!-- PURE -->
 
-<section class="ceremony" id="pure-modelos">
+<article
+class="portal"
+id="pure">
 
-<div class="pure-story">
-
-<img src="pure-mae-crianca.jpeg"
-alt="Coleção Pure para mães de batizado">
-
-<div>
+<img
+class="wm"
+src="cp-couture-logo.png"
+alt="">
 
 <div class="kicker">
 Mães de Batizado
 </div>
 
+<h3>
+Coleção <em>Pure</em>
+</h3>
+
+<p>
+Delicadeza e elegância para um momento especial,
+com modelos que podem ser adaptados em cor,
+tecido e detalhes.
+</p>
+
+<a
+class="btn light"
+href="#pure-modelos">
+Conhecer a coleção →
+</a>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ESSÊNCIA DO ATELIER
+========================= -->
+
+<section
+class="editorial"
+id="atelier">
+
+<div class="story">
+
+<div>
+
+<div class="kicker">
+A essência do Atelier
+</div>
+
 <h2>
-Um momento de família, vestido com <em>delicadeza.</em>
+Cada noiva é única.
+<em>O seu vestido também.</em>
 </h2>
 
 <p>
-A Coleção Pure nasce para acompanhar celebrações íntimas e
-especiais. Peças pensadas para mães que procuram leveza,
-elegância e a possibilidade de personalizar cada detalhe.
+Criamos vestidos sob medida, com processos artesanais
+e o cuidado de antigamente.
+</p>
+
+<p>
+Cada noiva é única, e cada criação nasce da sua essência
+— nunca de um molde pronto.
+</p>
+
+<p>
+<em>
+Para mulheres que valorizam o feito à mão,
+a exclusividade e a tradição.
+</em>
 </p>
 
 </div>
+
+
+<div class="brand-card">
+
+<img
+class="photo"
+src="identidade-priscila-duarte.jpeg"
+alt="Identidade Atelier Priscila Duarte">
+
+<img
+class="watermark"
+src="cp-couture-logo.png"
+alt="">
+
 </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BASTIDORES E PROVAS
+========================= -->
+
+<section
+class="gallery-section"
+id="bastidores">
 
 <div class="intro">
 
 <div class="kicker">
-Coleção Pure · Mães de Batizado
+Bastidores & Provas
 </div>
 
 <h2>
-Elegância criada <em>sob medida.</em>
+Onde cada vestido começa a pertencer à
+<em>sua noiva.</em>
 </h2>
 
 <p>
-Modelos de cerimónia com possibilidade de personalização
-de cor, tecido e detalhes.
+Entre tecidos, alfinetes, desenhos e provas,
+cada vestido vai encontrando a sua forma.
+É um processo feito de proximidade e atenção —
+observar o cair de um tecido, ajustar uma linha,
+aperfeiçoar uma proporção e cuidar dos detalhes
+que tornam cada criação verdadeiramente única.
 </p>
 
 </div>
 
-<div class="models">
 
-<div class="model">
-<img class="model-photo" src="pure-madessa.jpg" alt="Madessa">
-<h3>Madessa</h3><span>174 €</span>
-</div>
+<!-- AS 3 NOVAS FOTOGRAFIAS -->
 
-<div class="model">
-<img class="model-photo" src="pure-lumy.jpg" alt="Lumy">
-<h3>Lumy</h3><span>164 €</span>
-</div>
+<div class="gallery warm-gallery">
 
-<div class="model">
-<img class="model-photo" src="pure-tina.jpg" alt="Tina">
-<h3>Tina</h3><span>179 €</span>
-</div>
+<div class="tile">
 
-<div class="model">
-<img class="model-photo" src="pure-eveni.jpg" alt="Eveni">
-<h3>Eveni</h3><span>165 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-lis.jpg" alt="Lis">
-<h3>Lis</h3><span>155 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-eudora.jpg" alt="Eudora">
-<h3>Eudora</h3><span>170 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-grace.jpg" alt="Grace">
-<h3>Grace</h3><span>159 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-july.jpg" alt="July">
-<h3>July</h3><span>175 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-mey.jpg" alt="Mey">
-<h3>Mey</h3><span>179 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-brisa.jpg" alt="Brisa">
-<h3>Brisa</h3><span>169 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-jace.jpg" alt="Jace">
-<h3>Jace</h3><span>189 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-serine.jpg" alt="Serine">
-<h3>Serine</h3><span>155 €</span>
-</div>
-
-<div class="model">
-<img class="model-photo" src="pure-anny.jpg" alt="Anny">
-<h3>Anny</h3><span>165 €</span>
-</div>
-
-</div>
-
-<p style="text-align:center;color:var(--taupe);font-size:12px;margin-top:25px">
-Confeção por encomenda — prazo de 15 dias antes do envio.
-<br>
-Os valores podem variar mediante modificações.
-</p>
-
-<div class="actions"
-style="justify-content:center;margin-top:25px">
-
-<a class="btn rose"
-href="https://wa.me/351925941571?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Coleção%20Pure.">
-Falar sobre um modelo
-</a>
-
-</div>
-</section>
-
-
-<!-- FICHA CLIENTE -->
-
-<section class="appointment" id="agendar">
-
-<div class="kicker">
-Atendimento personalizado
-</div>
-
-<h2>
-O seu vestido começa com uma <em>conversa.</em>
-</h2>
-
-<p>
-Preencha a sua ficha. Ao enviar, será aberta uma conversa
-no WhatsApp do Atelier Priscila Duarte com o resumo dos seus dados,
-modelo escolhido e data da cerimónia.
-</p>
-
-<form class="client-form"
-id="clientForm"
-onsubmit="sendClientForm(event)">
-
-<label>
-Nome *
-<input id="clientName"
-type="text"
-required
-placeholder="O seu nome">
-</label>
-
-<label>
-WhatsApp / Telefone *
-<input id="clientPhone"
-type="tel"
-required
-placeholder="+351">
-</label>
-
-<label>
-E-mail
-<input id="clientEmail"
-type="email"
-placeholder="O seu e-mail">
-</label>
-
-<label>
-Data da cerimónia *
-<input id="clientDate"
-type="date"
-required>
-</label>
-
-<label class="full">
-Modelo de que gostou *
-<input id="clientModel"
-type="text"
-required
-placeholder="Ex.: Audace, Réverie, Éclat...">
-</label>
-
-<label class="full">
-Mensagem / ideias
-<textarea id="clientMessage"
-placeholder="Conte-nos um pouco sobre o vestido que procura..."></textarea>
-</label>
-
-<div class="full"
-style="text-align:center">
-
-<button class="btn"
-type="submit">
-Enviar ficha pelo WhatsApp
-</button>
-
-</div>
-
-</form>
-</section>
-
-
-<!-- CONTACTOS -->
-
-<section class="location" id="contactos">
-
-<div class="kicker">
-Visite o Atelier
-</div>
-
-<h2>
-Atelier <em>Priscila Duarte</em>
-</h2>
-
-<address>
-Rua Vasco da Gama 23 B<br>
-2670-396 Loures, Portugal<br><br>
-+351 925 941 571
-</address>
-
-<div class="actions"
-style="justify-content:center">
-
-<a class="btn light"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=Rua+Vasco+da+Gama+23+B%2C+2670-396+Loures%2C+Portugal">
-Ver localização no Google Maps
-</a>
-
-<a class="btn rose"
-href="https://wa.me/351925941571">
-WhatsApp
-</a>
+<img
+src="prova-noiva-01.jpeg"
+alt="Noiva durante uma prova de vestido">
 
 </div>
 
 
-<!-- INSTAGRAM -->
+<div class="tile">
 
-<div class="instagram-box">
+<img
+src="prova-noiva-02.jpeg"
+alt="Prova de vestido no atelier">
 
-<div class="kicker">
-Instagram
 </div>
 
-<h3>
-Veja mais do nosso trabalho
-</h3>
 
-<p>
-Acompanhe criações, detalhes, bastidores e novidades
-do Atelier Priscila Duarte.
-</p>
+<div class="tile">
 
-<a class="btn light"
-href="https://www.instagram.com/prisciladuarte_atelier/"
-target="_blank"
-rel="noopener">
-@prisciladuarte_atelier →
-</a>
+<img
+src="prova-noiva-03.jpeg"
+alt="Noiva a experimentar o vestido no atelier">
+
+</div>
 
 </div>
 
 </section>
-
-</main>
-
-
-<footer>
-© ATELIER PRISCILA DUARTE · LOURES, PORTUGAL
-</footer>
-
-
-<script>
-
-function toggleMenu(){
-
-  document
-  .getElementById('drawer')
-  .classList.toggle('open');
-
-  document
-  .getElementById('overlay')
-  .classList.toggle('open');
-
-  document.body.classList.toggle('lock');
-}
-
-
-/* FICHA → WHATSAPP */
-
-function sendClientForm(event){
-
-  event.preventDefault();
-
-  const name =
-  document.getElementById('clientName').value.trim();
-
-  const phone =
-  document.getElementById('clientPhone').value.trim();
-
-  const email =
-  document.getElementById('clientEmail').value.trim();
-
-  const date =
-  document.getElementById('clientDate').value;
-
-  const model =
-  document.getElementById('clientModel').value.trim();
-
-  const message =
-  document.getElementById('clientMessage').value.trim();
-
-
-  const text =
-  'Olá, Atelier Priscila Duarte! Gostaria de iniciar o meu atendimento.' +
-
-  '\n\nFICHA DA CLIENTE' +
-
-  '\n\nNome: ' + name +
-
-  '\nWhatsApp / Telefone: ' + phone +
-
-  '\nE-mail: ' + (email || 'Não indicado') +
-
-  '\nData da cerimónia: ' + date +
-
-  '\nModelo de que gostei: ' + model +
-
-  '\nMensagem / ideias: ' +
-  (message || 'Não indicado');
-
-
-  const whatsapp =
-  'https://wa.me/351925941571?text=' +
-  encodeURIComponent(text);
-
-
-  window.location.href = whatsapp;
-}
-
-</script>
-
-</body>
-</html>
