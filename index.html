@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Priscila Duarte Atelier | Atelier de Noivas em Loures</title>
+
+<meta name="description" content="Priscila Duarte Atelier — vestidos de noiva, criação sob medida e cerimónia em Loures, Portugal.">
+
+<style>
+:root {
+  --ivory: #f8f5ef;
+  --cream: #eee8dd;
+  --taupe: #a99c8c;
+  --text: #302d29;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ivory);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248,245,239,.96);
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.logo {
+  font-family: Georgia, serif;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--cream);
+}
+
+.hero h1 {
+  font-size: clamp(46px, 8vw, 88px);
+  line-height: 1.03;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 21px;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 23px;
+  margin: 5px;
+  background: var(--text);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-size: 11px;
+  border: 1px solid var(--text);
+}
+
+.btn-light {
+  background: transparent;
+  color: var(--text);
+}
+
+section {
+  padding: 90px 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  max-width: 650px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.photo {
+  background: #ddd6ca;
+  aspect-ratio: 3 / 4;
+}
+
+.cerimonia {
+  background: var(--white);
+}
+
+.product h3 {
+  font-size: 24px;
+  margin: 15px 0 8px;
+}
+
+.product p {
+  margin: 7px 0;
+}
+
+.note {
+  font-size: 13px;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.two h2 {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 22px;
+}
+
+.two p {
+  margin-bottom: 18px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.appointment {
+  text-align: center;
+  background: var(--cream);
+}
+
+.appointment h2,
+.location h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  margin-bottom: 18px;
+}
+
+.appointment p {
+  max-width: 680px;
+  margin: 0 auto 26px;
+}
+
+.location {
+  text-align: center;
+}
+
+footer {
+  background: var(--text);
+  color: white;
+  text-align: center;
+  padding: 38px 20px;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .grid,
+  .two {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">PRISCILA DUARTE ATELIER</div>
+
+  <nav>
+    <a href="#colecao">Coleção</a>
+    <a href="#cerimonia">Cerimónia</a>
+    <a href="#sob-medida">Sob medida</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contactos">Contactos</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div>
+    <h1>Priscila Duarte<br>Atelier</h1>
+
+    <p>Cada vestido nasce de uma história.</p>
+
+    <a class="btn" href="#colecao">
+      Ver coleção
+    </a>
+
+    <a class="btn btn-light" href="#agendamento">
+      Agendar atendimento personalizado
+    </a>
+  </div>
+</section>
+
+<section id="colecao">
+
+  <div class="section-title">
+    <h2>Coleção Noivas</h2>
+
+    <p>
+      Silhuetas, detalhes e matérias escolhidos para celebrar
+      a individualidade de cada noiva.
+    </p>
+  </div>
+
+  <div class="grid">
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+  </div>
+
+  <div style="text-align:center; margin-top:32px;">
+    <a class="btn" href="#agendamento">
+      Agendar atendimento
+    </a>
+  </div>
+
+</section>
+
+<section id="cerimonia" class="cerimonia">
+
+  <div class="section-title">
+    <h2>Cerimónia</h2>
+
+    <p>
+      Modelos para momentos especiais,
+      confecionados por encomenda.
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <article class="product">
+      <div class="photo"></div>
+
+      <h3>Modelo Cerimónia</h3>
+
+      <p><strong>Cores disponíveis:</strong> a definir</p>
+
+      <p><strong>Tamanho disponível:</strong> a definir</p>
+
+      <p class="note">
+        Confeção por encomenda — prazo de 15 dias antes do envio.
+      </p>
+
+      <a class="btn" href="#contactos">
+        Escolher este modelo
+      </a>
+
+      <a class="btn btn-light" href="#contactos">
+        Personalizar este modelo
+      </a>
+    </article>
+
+    <article class="product">
+      <div class="photo"></div>
+
+      <h3>Modelo Cerimónia</h3>
+
+      <p><strong>Cores disponíveis:</strong> a definir</p>
+
+      <p><strong>Tamanho disponível:</strong> a definir</p>
+
+      <p class="note">
+        Confeção por encomenda — prazo de 15 dias antes do envio.
+      </p>
+
+      <a class="btn" href="#contactos">
+        Escolher este modelo
+      </a>
+
+      <a class="btn btn-light" href="#contactos">
+        Personalizar este modelo
+      </a>
+    </article>
+
+    <article class="product">
+      <div class="photo"></div>
+
+      <h3>Modelo Cerimónia</h3>
+
+      <p><strong>Cores disponíveis:</strong> a definir</p>
+
+      <p><strong>Tamanho disponível:</strong> a definir</p>
+
+      <p class="note">
+        Confeção por encomenda — prazo de 15 dias antes do envio.
+      </p>
+
+      <a class="btn" href="#contactos">
+        Escolher este modelo
+      </a>
+
+      <a class="btn btn-light" href="#contactos">
+        Personalizar este modelo
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<section id="sob-medida">
+
+  <div class="two">
+
+    <div>
+      <h2>Sob medida</h2>
+
+      <p>
+        Um vestido criado para si, desenvolvido através
+        de um processo próximo e personalizado.
+      </p>
+
+      <p>
+        Da ideia à escolha das matérias, da construção às provas,
+        cada etapa faz parte da história do vestido.
+      </p>
+
+      <a class="btn" href="#agendamento">
+        Agendar atendimento
+      </a>
+    </div>
+
+    <div class="photo"></div>
+
+  </div>
+
+</section>
+
+<section id="sobre">
+
+  <div class="two">
+
+    <div class="photo"></div>
+
+    <div>
+      <h2>O Atelier</h2>
+
+      <p>
+        No Priscila Duarte Atelier, cada criação começa
+        com uma conversa.
+      </p>
+
+      <p>
+        Desenho, matéria, construção e prova unem-se
+        num processo pensado para criar peças com
+        identidade e significado.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="galeria">
+
+  <div class="section-title">
+    <h2>Noivas Reais</h2>
+
+    <p>
+      Histórias reais vestidas pelo Priscila Duarte Atelier.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+  </div>
+
+</section>
+
+<section id="agendamento" class="appointment">
+
+  <h2>O seu vestido começa aqui.</h2>
+
+  <p>
+    Entre em contacto com o atelier para iniciar
+    o seu atendimento personalizado.
+  </p>
+
+  <a class="btn"
+     href="https://wa.me/351925941571">
+     Falar pelo WhatsApp
+  </a>
+
+</section>
+
+<section id="contactos" class="location">
+
+  <h2>Visite o Atelier</h2>
+
+  <p>
+    <strong>PRISCILA DUARTE ATELIER</strong>
+    <br><br>
+    Rua Vasco da Gama 23 B
+    <br>
+    2670-396 Loures, Portugal
+  </p>
+
+  <p style="margin:24px 0;">
+    +351 925 941 571
+  </p>
+
+  <a class="btn"
+     target="_blank"
+     href="https://www.google.com/maps/search/?api=1&query=Rua+Vasco+da+Gama+23+B%2C+2670-396+Loures%2C+Portugal">
+     Ver localização no Google Maps
+  </a>
+
+  <a class="btn btn-light"
+     href="https://wa.me/351925941571">
+     WhatsApp
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+  © Priscila Duarte Atelier · Loures, Portugal
+</footer>
+
+</body>
+</html>
